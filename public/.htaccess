@@ -1,14 +1,23 @@
+<IfModule mod_authz_core.c>
+  Require all granted
+</IfModule>
+
 DirectoryIndex index.php
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Si se accede directamente a /public/, redirigir a la raíz del dominio
+  RewriteCond %{THE_REQUEST} /public/ [NC]
+  RewriteRule ^(.*)$ https://claudia.appsicam.net/ [R=301,L]
+
+  # Resto de tus reglas normales
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.php [L]
+  RewriteRule . index.php [L]
 </IfModule>
 
 # php -- BEGIN cPanel-generated handler, do not edit
-# Set the “ea-php80” package as the default “PHP” programming language.
 <IfModule mime_module>
   AddHandler application/x-httpd-ea-php80 .php .php8 .phtml
 </IfModule>
