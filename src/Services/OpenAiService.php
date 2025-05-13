@@ -16,7 +16,7 @@ class OpenAiService implements IaServiceInterface {
         ];
 
         $response = $this->makeRequest('https://api.openai.com/v1/chat/completions', $data);
-        return $response['choices'][0]['message']['content'] ?? 'Error';
+        return $response['choices'][0]['message']['content'] ?? $response['error']['message'];
     }
 
     private function makeRequest($url, $data) {

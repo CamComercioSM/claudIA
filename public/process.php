@@ -1,5 +1,5 @@
 <?php
-require_once '../../config/config.php';
+//require_once '../config/config.php';
 require_once '../src/Services/OpenAiService.php';
 require_once '../src/Services/HuggingFaceService.php';
 
@@ -8,7 +8,7 @@ $engine = $_POST['engine'] ?? 'openai';
 
 $config = include('../config/config.php');
 
-print_r($config );
+//print_r($config );
 
 switch ($engine) {
     case 'huggingface':
