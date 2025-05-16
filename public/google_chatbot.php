@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
 <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 <df-messenger
@@ -7,8 +8,9 @@
   language-code="es"
   max-query-length="-1"
   allow-feedback="all">
-  <df-messenger-chat-bubble chat-title="chatbot-site-dev">
-  </df-messenger-chat-bubble>
+  <df-messenger-chat
+    chat-title="chatbot-site-dev">
+  </df-messenger-chat>
 </df-messenger>
 <style>
   df-messenger {
@@ -19,7 +21,9 @@
     --df-messenger-chat-background: #f3f6fc;
     --df-messenger-message-user-background: #d3e3fd;
     --df-messenger-message-bot-background: #fff;
-    bottom: 16px;
-    right: 16px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    width: 350px;
   }
 </style>
